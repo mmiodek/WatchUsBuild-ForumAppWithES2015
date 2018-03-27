@@ -11,10 +11,10 @@ let ui = {
 
 let articleTemplate = `<article class='post'>
     <h2 class='post-title'>
-      ${safeTitle}
+     Post Title
     </h2>
     <p class='post-meta'>
-      last reply on ${safeLastReply}
+      last reply on 22-02-2017
     </p>
   </article>`;
 
