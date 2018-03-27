@@ -9,7 +9,7 @@ let Post = {
           resolve(request.response);
         }
       };
-
+//erere
       request.send();
     });
   }
