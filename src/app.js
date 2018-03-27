@@ -9,6 +9,10 @@ let Post = {
           resolve(JSON.parse(request.response));
         }
       };
+      request.onerror = () => {
+        reject(new Error("Something wrong with the API"));
+      }
+
       request.send();
     });
   }
@@ -20,4 +24,4 @@ let ui = {
   }
 }
 
-Post.findAll().then(ui.renderPosts);
+Post.findAll().then(ui.renderPosts).catch((error) => {console.log(error)});
