@@ -1,22 +1,25 @@
 let ui = {
   renderPosts(posts){
     let elements = posts.map((post) => {
-      return articleTemplate;
+      let {title,lastReply} = post;
+      return articleTemplate(title,lastReply);
     });
 
     let target = document.querySelector(".container");
-    target.innerHTML = elements;
+    target.innerHTML = elements.join("");
   }
 }
 
-let articleTemplate = `<article class='post'>
+articleTemplate(title,lastReply) {
+  let template = `<article class='post'>
     <h2 class='post-title'>
-     Post Title
+     ${title}
     </h2>
     <p class='post-meta'>
-      last reply on 22-02-2017
+      $(lastReply)
     </p>
   </article>`;
-
+  return template;
+}
 
 export default ui;
