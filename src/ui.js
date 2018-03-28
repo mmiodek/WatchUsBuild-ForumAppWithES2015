@@ -10,7 +10,7 @@ let ui = {
   }
 }
 
-articleTemplate(title,lastReply) {
+function articleTemplate(title,lastReply) {
   let template = `<article class='post'>
     <h2 class='post-title'>
      ${title}
