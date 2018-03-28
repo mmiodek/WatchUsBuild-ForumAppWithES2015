@@ -1,5 +1,5 @@
-import Post from "./post";
-import ui from "./ui";
+import Post from "./post.js";
+import ui from "./ui.js";
 // let Post = {
 //   findAll(){
 //     return new Promise((resolve,reject) => {
