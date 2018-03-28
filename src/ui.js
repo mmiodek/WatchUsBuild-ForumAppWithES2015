@@ -16,7 +16,7 @@ function articleTemplate(title,lastReply) {
      ${title}
     </h2>
     <p class='post-meta'>
-      $(lastReply)
+      ${lastReply}
     </p>
   </article>`;
   return template;
