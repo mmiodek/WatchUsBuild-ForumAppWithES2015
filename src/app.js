@@ -1,35 +1,35 @@
-//import Post from "./post";
-//import ui from "./ui";
-let Post = {
-  findAll(){
-    return new Promise((resolve,reject) => {
-      let uri = "http://localhost:3000/posts";
-      let request = new XMLHttpRequest();
-      request.open("GET",uri,true);
-      request.onload = () => {
-        if(request.status >=200 && request.status < 400){
-          resolve(JSON.parse(request.response));
-        }
-      };
-      request.onerror = () => {
-        reject(new Error("Something wrong with the API"));
-      }
+import Post from "./post";
+import ui from "./ui";
+// let Post = {
+//   findAll(){
+//     return new Promise((resolve,reject) => {
+//       let uri = "http://localhost:3000/posts";
+//       let request = new XMLHttpRequest();
+//       request.open("GET",uri,true);
+//       request.onload = () => {
+//         if(request.status >=200 && request.status < 400){
+//           resolve(JSON.parse(request.response));
+//         }
+//       };
+//       request.onerror = () => {
+//         reject(new Error("Something wrong with the API"));
+//       }
 
-      request.send();
-    });
-  }
-}
+//       request.send();
+//     });
+//   }
+// }
 
-let ui = {
-  renderPosts(posts){
-    let elements = posts.map((post) => {
-      return articleTemplate;
-    });
+// let ui = {
+//   renderPosts(posts){
+//     let elements = posts.map((post) => {
+//       return articleTemplate;
+//     });
 
-    let target = document.querySelector(".container");
-    target.innerHTML = elements;
-  }
-}
+//     let target = document.querySelector(".container");
+//     target.innerHTML = elements;
+//   }
+// }
 
 let articleTemplate = `<article class='post'>
     <h2 class='post-title'>
