@@ -1150,12 +1150,7 @@ exports.default = Post;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-
-var _xssFilters = require("xss-filters");
-
-var _xssFilters2 = _interopRequireDefault(_xssFilters);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var xss = require('xss-filters');
 
 var ui = {
   renderPosts: function renderPosts(posts) {
@@ -1172,8 +1167,8 @@ var ui = {
 };
 
 function articleTemplate(title, lastReply) {
-  var safeTitle = xssFilters.inHTMLData(title);
-  var safeReply = xssFilters.inHTMLData(lastReply);
+  var safeTitle = xss.inHTMLData(title);
+  var safeReply = xss.inHTMLData(lastReply);
   var template = "<article class='post'>\n    <h2 class='post-title'>\n     " + safeTitle + "\n    </h2>\n    <p class='post-meta'>\n      " + safeReply + "\n    </p>\n  </article>";
   return template;
 }
