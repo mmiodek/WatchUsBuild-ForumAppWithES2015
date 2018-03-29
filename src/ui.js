@@ -13,8 +13,8 @@ let ui = {
 }
 
 function articleTemplate(title,lastReply) {
-  let safeTitle = xss.inHTMLData(title);
-  let safeReply = xss.inHTMLData(lastReply);
+  let safeTitle = xssFilters.inHTMLData(title);
+  let safeReply = xssFilters.inHTMLData(lastReply);
   let template = `<article class='post'>
     <h2 class='post-title'>
      ${safeTitle}
