@@ -1137,6 +1137,10 @@ var _post = require("./post.js");
 
 var _post2 = _interopRequireDefault(_post);
 
+var _user = require("./user.js");
+
+var _user2 = _interopRequireDefault(_user);
+
 var _ui = require("./ui.js");
 
 var _ui2 = _interopRequireDefault(_ui);
@@ -1147,11 +1151,11 @@ _post2.default.findAll().then(_ui2.default.renderPosts).catch(function (error) {
   console.log(error);
 });
 
-User.findRecent().then(_ui2.default.renderUsers).catch(function (error) {
+_user2.default.findRecent().then(_ui2.default.renderUsers).catch(function (error) {
   console.log(error);
 });
 
-},{"./post.js":5,"./ui.js":6}],4:[function(require,module,exports){
+},{"./post.js":5,"./ui.js":6,"./user.js":7}],4:[function(require,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1236,4 +1240,25 @@ function activeUsersTemplate(name, avatar) {
 
 exports.default = ui;
 
-},{"xss-filters":1}]},{},[3]);
+},{"xss-filters":1}],7:[function(require,module,exports){
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _api = require("./api");
+
+var _api2 = _interopRequireDefault(_api);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var User = {
+  findAll: function findAll() {
+    return _api2.default.fetch("activeUsers");
+  }
+};
+
+exports.default = User;
+
+},{"./api":2}]},{},[3]);

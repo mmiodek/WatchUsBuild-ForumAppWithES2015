@@ -1,9 +1,9 @@
 import API from "./api"
 
-let Post = {
+let User = {
   findAll(){
     return API.fetch("activeUsers");
   }
 }
 
-export default Post;
+export default User;
