@@ -9,8 +9,20 @@ let ui = {
 
     let target = document.querySelector(".container");
     target.innerHTML = elements.join("");
+  },
+
+  renderActiveUsers(users){
+
+    let target = document.querySelector(".sidebar-content");
+
+    let elements = users.map( (user) => {
+      let { name, avatar } = user;
+      return activeUsersTemplate(name, avatar);
+    });
+
+    target.innerHTML = elements.join("");
   }
-}
+};
 
 function articleTemplate(title,lastReply) {
   let safeTitle = xss.inHTMLData(title);
@@ -23,6 +35,20 @@ function articleTemplate(title,lastReply) {
       ${safeReply}
     </p>
   </article>`;
+  return template;
+}
+
+function activeUsersTemplate(name, avatar){
+
+  let safeName = xss.inHTMLData(name);
+  let safeAvatar = xss.inHTMLData(avatar);
+
+  let template = `
+    <div class="active-avatar">
+    <img width="54" src="assets/images/${safeAvatar}">
+    <h5 class="post-author">${safeName}</h5>
+    </div>`;
+
   return template;
 }
 
