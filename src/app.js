@@ -8,5 +8,5 @@ Post.findAll()
   .catch((error) => {console.log(error)});
 
 User.findRecent()
-  .then(ui.renderUsers)
+  .then(ui.renderActiveUsers)
   .catch((error) => {console.log(error)});

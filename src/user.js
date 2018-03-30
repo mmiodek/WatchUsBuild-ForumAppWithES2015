@@ -1,7 +1,7 @@
 import API from "./api"
 
 let User = {
-  findAll(){
+  findRecent(){
     return API.fetch("activeUsers");
   }
 }
