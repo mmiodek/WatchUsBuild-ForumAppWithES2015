@@ -6,4 +6,6 @@ let Post = {
   }
 }
 
+console.log(Post);
+
 export default Post;
