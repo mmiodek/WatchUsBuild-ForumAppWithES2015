@@ -1151,7 +1151,7 @@ _post2.default.findAll().then(_ui2.default.renderPosts).catch(function (error) {
   console.log(error);
 });
 
-_user2.default.findRecent().then(_ui2.default.renderUsers).catch(function (error) {
+_user2.default.findRecent().then(_ui2.default.renderActiveUsers).catch(function (error) {
   console.log(error);
 });
 
@@ -1183,6 +1183,8 @@ var Post = {
     return _api2.default.fetch("posts");
   }
 };
+
+console.log(Post);
 
 exports.default = Post;
 
@@ -1254,10 +1256,12 @@ var _api2 = _interopRequireDefault(_api);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var User = {
-  findAll: function findAll() {
+  findRecent: function findRecent() {
     return _api2.default.fetch("activeUsers");
   }
 };
+
+console.log(User);
 
 exports.default = User;
 
