@@ -1111,7 +1111,7 @@ var _constants = require("./constants");
 var API = {
   fetch: function fetch(path) {
     return new Promise(function (resolve, reject) {
-      var uri = '${BASE_URI/${path}';
+      var uri = _constants.BASE_URI + "/" + path;
       var request = new XMLHttpRequest();
       request.open("GET", uri, true);
       request.onload = function () {
