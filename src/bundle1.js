@@ -1,11 +1,11 @@
 const BASE_URI = "http://localhost:3000";
-
+var xss = require('xss-filters');
 
 let API = {
   fetch(path){
     return new Promise((resolve,reject) => {
-      console.log(BASE_URI + path);
-      let uri = '${BASE_URI}/${path}';
+      let uri = BASE_URI + "/" + path;
+      console.log(uri);
       let request = new XMLHttpRequest();
       request.open("GET",uri,true);
       request.onload = () => {
